@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class TransactionController {
     private TransactionService transactionService;
     
-    @Autowired
     public TransactionController(final TransactionService transactionService) {
         this.transactionService = transactionService;
     }
