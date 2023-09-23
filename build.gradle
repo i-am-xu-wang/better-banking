@@ -35,6 +35,9 @@ dependencies {
 	implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.14.2'
 	implementation 'org.openapitools:jackson-databind-nullable:0.2.6'
 	implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.1'
+	implementation 'io.github.resilience4j:resilience4j-spring-boot2:2.0.2'
+	implementation 'io.github.resilience4j:resilience4j-reactor:2.0.2'
+
 }
 
 tasks.named('test') {
