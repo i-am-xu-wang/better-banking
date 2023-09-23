@@ -8,16 +8,18 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 @SpringBootApplication
 public class BetterBankingApplication {
-	@Value("${betterbanking.base_url}")
-	private String baseUrl;
-	@Bean
-	public WebClient webClient() {
-		return WebClient.builder()
-				.baseUrl(baseUrl)
-				.build();
-	}
-	public static void main(String[] args) {
-		SpringApplication.run(BetterBankingApplication.class, args);
-	}
+    @Value("${betterbanking.base_url}")
+    private String baseUrl;
+
+    public static void main(String[] args) {
+        SpringApplication.run(BetterBankingApplication.class, args);
+    }
+
+    @Bean
+    public WebClient webClient() {
+        return WebClient.builder()
+                .baseUrl(baseUrl)
+                .build();
+    }
 
 }

@@ -14,9 +14,10 @@ import java.util.List;
 
 @Slf4j
 @Repository
-public class RESTTransactionsAPIClient implements TransactionApiClient{
+public class RESTTransactionsAPIClient implements TransactionApiClient {
     private WebClient client;
     private OBTransactionAdapter obTransactionAdapter = new OBTransactionAdapter();
+
     @Autowired
     public RESTTransactionsAPIClient(WebClient client) {
         this.client = client;
@@ -36,7 +37,7 @@ public class RESTTransactionsAPIClient implements TransactionApiClient{
             return new ArrayList<>();
         }
         List<Transaction> transactions = new ArrayList<>();
-        for(OBTransaction6 ob: res.getData().getTransaction()) {
+        for (OBTransaction6 ob : res.getData().getTransaction()) {
             transactions.add(obTransactionAdapter.adapt(ob));
         }
         return transactions;

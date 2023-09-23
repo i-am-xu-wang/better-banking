@@ -1,16 +1,18 @@
 package betterbanking;
-import java.util.ArrayList;
-import java.util.List;
 
 import betterbanking.repository.MerchantDetailsRepository;
 import betterbanking.repository.TransactionApiClient;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class TransactionService {
     private final TransactionApiClient transactionApiClient;
     private final MerchantDetailsRepository merchantDetailsRepository;
+
     public TransactionService(
             final TransactionApiClient transactionApiClient,
             final MerchantDetailsRepository merchantDetailsRepository) {
@@ -20,7 +22,7 @@ public class TransactionService {
 
     @CircuitBreaker(name = "transactionService", fallbackMethod = "foundNone")
     public List<Transaction> findAllByAccountNumber(final Integer accountNumber) {
-        List<Transaction> transactions= transactionApiClient.findAllByAccountNumber(accountNumber);
+        List<Transaction> transactions = transactionApiClient.findAllByAccountNumber(accountNumber);
         transactions.forEach(transaction -> {
             merchantDetailsRepository.findMerchantLogo(transaction.getMerchantName()).ifPresent(logo -> {
                 transaction.setMerchantLogo(logo);

@@ -3,19 +3,11 @@ package betterbanking.integration;
 import betterbanking.Transaction;
 import betterbanking.model.OBTransaction6;
 
-import java.math.BigDecimal;
-import java.time.Instant;
-import java.util.Date;
 import java.util.Optional;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
 public class OBTransactionAdapter {
-
-    public Transaction adapt(final OBTransaction6 transaction6) {
-        return mapToTransaction.apply(transaction6);
-    }
-
 
     private Function<OBTransaction6, Transaction> mapToTransaction = obTransaction6 -> {
         Transaction transaction = new Transaction();
@@ -32,6 +24,10 @@ public class OBTransactionAdapter {
 
         return transaction;
     };
+
+    public Transaction adapt(final OBTransaction6 transaction6) {
+        return mapToTransaction.apply(transaction6);
+    }
 
     private int getAccountNumberFrom(OBTransaction6 obTransaction6) {
         return Integer.valueOf(obTransaction6.getAccountId());
