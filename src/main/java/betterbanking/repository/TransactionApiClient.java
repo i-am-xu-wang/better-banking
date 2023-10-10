@@ -1,6 +1,6 @@
 package betterbanking.repository;
 
-import betterbanking.Transaction;
+import betterbanking.entity.Transaction;
 
 import java.util.List;
 

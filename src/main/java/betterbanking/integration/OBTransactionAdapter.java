@@ -1,6 +1,6 @@
 package betterbanking.integration;
 
-import betterbanking.Transaction;
+import betterbanking.entity.Transaction;
 import betterbanking.model.OBTransaction6;
 
 import java.util.Optional;

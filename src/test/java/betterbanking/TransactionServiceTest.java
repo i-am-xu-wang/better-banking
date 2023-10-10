@@ -1,7 +1,9 @@
 package betterbanking;
 
+import betterbanking.entity.Transaction;
 import betterbanking.repository.MerchantDetailsRepository;
 import betterbanking.repository.TransactionApiClient;
+import betterbanking.service.TransactionService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
