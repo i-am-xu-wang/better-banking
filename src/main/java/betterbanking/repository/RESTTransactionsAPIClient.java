@@ -1,6 +1,6 @@
 package betterbanking.repository;
 
-import betterbanking.Transaction;
+import betterbanking.entity.Transaction;
 import betterbanking.integration.OBTransactionAdapter;
 import betterbanking.model.OBReadTransaction6;
 import betterbanking.model.OBTransaction6;

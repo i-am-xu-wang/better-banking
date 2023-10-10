@@ -1,6 +1,6 @@
 package betterbanking.integration;
 
-import betterbanking.Transaction;
+import betterbanking.entity.Transaction;
 import betterbanking.model.OBActiveOrHistoricCurrencyAndAmount9;
 import betterbanking.model.OBCreditDebitCode1;
 import betterbanking.model.OBTransaction6;

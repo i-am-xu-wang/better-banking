@@ -1,5 +1,6 @@
-package betterbanking;
+package betterbanking.service;
 
+import betterbanking.entity.Transaction;
 import betterbanking.repository.MerchantDetailsRepository;
 import betterbanking.repository.TransactionApiClient;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
