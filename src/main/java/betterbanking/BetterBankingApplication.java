@@ -18,7 +18,7 @@ public class BetterBankingApplication {
     @Bean
     public WebClient webClient() {
         return WebClient.builder()
-                .baseUrl(baseUrl)
+                .baseUrl("http://localhost:8080")
                 .build();
     }
 
