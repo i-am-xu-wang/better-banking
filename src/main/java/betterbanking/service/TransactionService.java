@@ -4,6 +4,7 @@ import betterbanking.entity.Transaction;
 import betterbanking.repository.MerchantDetailsRepository;
 import betterbanking.repository.TransactionApiClient;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ public class TransactionService {
         this.merchantDetailsRepository = merchantDetailsRepository;
     }
 
+    @Cacheable(cacheNames = "transactions")
     @CircuitBreaker(name = "transactionService", fallbackMethod = "foundNone")
     public List<Transaction> findAllByAccountNumber(final Integer accountNumber) {
         List<Transaction> transactions = transactionApiClient.findAllByAccountNumber(accountNumber);

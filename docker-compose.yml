@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  myapp:
+    image: better-banking:latest
+    restart: on-failure
+    depends_on:
+      - redis
+    environment:
+      - DATASOURCE_URL=http://localhost:8080
+    networks:
+      - external-net
+
+  redis:
+    image: redis:latest
+    restart: on-failure
+    networks:
+      - app-network
+
+networks:
+  external-net:
+    external: true
