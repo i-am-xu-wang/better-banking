@@ -38,6 +38,10 @@ dependencies {
 	implementation 'io.github.resilience4j:resilience4j-spring-boot2:2.0.2'
 	implementation 'io.github.resilience4j:resilience4j-reactor:2.0.2'
 
+	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+	implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+
 }
 
 tasks.named('test') {
