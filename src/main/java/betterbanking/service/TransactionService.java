@@ -15,7 +15,7 @@ public class TransactionService {
     private final TransactionApiClient transactionApiClient;
     private final MerchantDetailsRepository merchantDetailsRepository;
 
-    public TransactionService(
+    public TransactionService (
             final TransactionApiClient transactionApiClient,
             final MerchantDetailsRepository merchantDetailsRepository) {
         this.transactionApiClient = transactionApiClient;
